@@ -1,0 +1,324 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap');
+
+/* スムーズスクロールの設定 */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fafafa;
+    color: #333;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Noto Sans JP", sans-serif;
+    line-height: 2;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.08em;
+}
+
+/* ヘッダー周り：万年筆を大きく中央に配置 */
+header {
+    text-align: center;
+    padding: 15vh 20px 10vh;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.pen-icon {
+    width: 140px; /* 万年筆を大きく */
+    height: auto;
+    opacity: 0.8;
+    transform: rotate(-15deg);
+}
+
+.name-area {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin: 0;
+    letter-spacing: 0.25em;
+    color: #111;
+}
+
+h1 span {
+    font-size: 0.9rem;
+    display: block;
+    color: #999;
+    margin-top: 15px;
+    letter-spacing: 0.35em;
+}
+
+.tagline {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+/* セクション共通 */
+section {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+h2 {
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.disclaimer {
+    font-size: 0.75rem;
+    color: #999;
+    text-align: center;
+    margin-top: -30px;
+    margin-bottom: 50px;
+}
+
+.category h3 {
+    font-size: 0.85rem;
+    color: #999;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* 目次（Bento Grid） */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.work-item {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    padding: 45px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    display: block;
+}
+
+.work-item:hover {
+    background-color: #f5f5f5;
+    color: #111;
+    border-color: #ccc;
+}
+
+/* 仕事カテゴリーの共通設定 */
+.works-category {
+    margin-bottom: 80px;
+    padding-top: 40px;
+}
+
+.category-title {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: #111;
+    border-bottom: 1px solid #111;
+    display: inline-block;
+    padding-bottom: 5px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* カード共通 */
+.article-card {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    transition: opacity 0.4s ease;
+}
+
+.article-card:hover {
+    opacity: 0.6;
+}
+
+.article-card p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    margin: 0;
+    color: #444;
+    font-weight: 300;
+}
+
+.article-card .caption {
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 5px;
+    line-height: 1.5;
+}
+
+/* 横長画像（Web記事用）：PCで2つ並ぶ */
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px 30px;
+}
+
+.article-grid .thumb-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background-color: #eaeaea;
+    border: 1px solid #eaeaea;
+}
+
+.article-grid .thumb-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 縦長画像（雑誌・本用）：巨大化を防ぎつつ3つ並ぶ */
+.portrait-grid {
+    display: grid;
+    /* minmax(160px, 1fr)にすることで、スマホでは並び、PCでは巨大化せずに整列します */
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
+    gap: 50px 25px;
+}
+
+.portrait-grid .article-card {
+    max-width: 200px; /* カード自体の幅に上限を設ける */
+    margin: 0 auto;
+}
+
+.portrait-grid .thumb-wrapper {
+    width: 100%;
+    aspect-ratio: auto;
+    border: none;
+    background-color: transparent;
+    margin-bottom: 15px;
+}
+
+.portrait-grid .thumb-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    box-shadow: 2px 5px 15px rgba(0,0,0,0.1);
+}
+
+/* フッター */
+footer { text-align: center; padding: 100px 20px; }
+footer a { color: #999; text-decoration: none; font-size: 0.9rem; }
+
+.btn {
+    display: inline-block;
+    padding: 12px 35px;
+    border: 1px solid #ccc;
+    color: #333 !important;
+    text-decoration: none;
+    margin-top: 30px;
+    font-size: 0.95rem;
+}
+
+/* モバイル対応 */
+@media (max-width: 600px) {
+    h1 { font-size: 1.8rem; }
+    .pen-icon { width: 100px; }
+    .portrait-grid {
+        grid-template-columns: repeat(2, 1fr); /* スマホでは2冊ずつ並べる */
+        gap: 30px 15px;
+    }
+}
+/* --- Contact Section Styles --- */
+#contact-area {
+    max-width: 600px; /* フォームは少し細めの方が書きやすい */
+    margin: 0 auto;
+    padding: 100px 20px;
+    border-bottom: none; /* 最後のセクションなので線は不要 */
+}
+
+.contact-text {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    font-size: 0.8rem;
+    color: #999;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #eaeaea;
+    background-color: #fff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: #333;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box; /* 枠線が外にはみ出ないように設定 */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #333; /* フォーカス時に黒く締める */
+}
+
+/* 送信ボタン */
+.submit-btn {
+    align-self: center; /* ボタンを中央に */
+    padding: 15px 60px;
+    background-color: #111;
+    color: #fff;
+    border: 1px solid #111;
+    cursor: pointer;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background-color: transparent;
+    color: #111;
+}
+
+/* スマホ表示の調整 */
+@media (max-width: 600px) {
+    .submit-btn {
+        width: 100%; /* スマホではボタンを横いっぱいに */
+    }
+}
