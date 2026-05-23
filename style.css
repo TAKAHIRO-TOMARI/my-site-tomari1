@@ -322,3 +322,41 @@ footer a { color: #999; text-decoration: none; font-size: 0.9rem; }
         width: 100%; /* スマホではボタンを横いっぱいに */
     }
 }
+/* --- and more ボタンのエレガントなスタイリング --- */
+.more-works {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* もともとブラウザが付与する小さな三角矢印を消す */
+.more-works summary::-webkit-details-marker {
+    display: none;
+}
+.more-works summary {
+    list-style: none;
+}
+
+/* ボタンのデザイン */
+.more-btn {
+    display: inline-block;
+    padding: 10px 40px;
+    border: 1px solid #ccc;
+    color: #666;
+    background-color: #fff;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.more-btn:hover {
+    background-color: #111;
+    color: #fff;
+    border-color: #111;
+}
+
+/* ボタンが押されて展開（open）されたら、ボタン自体を静かに消す設定 */
+.more-works[open] summary {
+    display: none;
+}
